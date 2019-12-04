@@ -1,0 +1,259 @@
+* {
+	box-sizing: border-box;
+}
+body{
+ font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+}
+header{
+	/* position: absolute;
+	z-index: 1; dejo el carrusel abajo junto .posi*/
+	width: 100%;
+  background-color: #eaeaea;
+	/* rgba(255, 255, 255, 0); */
+  text-align: center;
+}
+/* .posi{
+	position: relative;
+} */
+.searchRedondo{
+	border-radius: 20px;
+	border: none;
+	font-weight: lighter;
+}
+/* Comienzo BarraRoja */
+.barraRoja{
+	background-color: black;
+	/* rgb(203, 26, 26); rgba(255, 255, 255, 0)*/
+	line-height: 24px;
+	font-weight: 500;
+}
+div.barraRoja ion-icon,
+footer section article ion-icon.achicarIconos
+{
+	position: relative;
+	top: 2px; /*bajo los iconos 2 px */
+}
+.primerNav{
+	width: 100%;
+	text-align: left;
+	padding-left: 4%;
+}
+.segundoNav{
+	width: 100%;
+	text-align: right;
+	padding-right: 4%;
+}
+div nav.segundoNav a,
+div nav.primerNav a
+{
+	text-decoration: none;
+	color: white;
+	/* #ea3030; */
+	padding: 15px;
+	font-size: 14px;
+}
+div nav.primerNav a:hover{
+	color: #ea3030;
+}
+div nav.segundoNav a:hover{
+	color: #ea3030;
+}
+.alturaBanner{
+  height: 450px;
+}
+.logo,
+.logoCirculo{
+  width: 100%;
+}
+/* .bordeRedondo{
+	border-radius: 15px;
+} */
+.chamuyo{
+  text-align: center;
+  padding: 50px 0px 50px 0px;
+}
+.tamño{
+	height: 450px;
+}
+.venta{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.botonMenu{
+  text-decoration: none;
+  background-color: grey;
+  border: none;
+}
+.botonChango{
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ea3030;
+  border: none;
+  font-size: 24px;
+}
+/* .botonChango:hover{
+  color: white;
+	border: 1px solid red;
+} */
+main aside div button.btn {
+	text-align: left;
+	text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+  border: none;
+  font-size: 18px;
+}
+button.btn:hover{
+	color: white;
+	background-color: #ea3030;
+}
+.tarjetasSinborde{
+  border: none;
+}
+.anchoBanner{
+	width: 100vw;
+}
+h4{
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+footer section article ion-icon{
+	font-size: 40px;
+}
+footer section article ion-icon.achicarIconos{
+	font-size: 15px;
+}
+footer section article a{
+	text-decoration: none;
+	color: white;
+	text-align: left;
+}
+footer section article a:hover{
+	color: rgb(203, 26, 26);
+	text-decoration: none;
+}
+.fin{
+	/* display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around; */
+  background-color: black;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+  margin: 0px;
+	line-height: 40px;
+	width: 100%;
+	padding-left: 15%;
+}
+.fin2{
+  background-color: black;
+  color: grey;
+  text-align: center;
+  font-size: 10px;
+  margin: 0px;
+}
+/* css del faq */
+.h1-faq{
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	color: red;
+}
+/* css  del formulario */
+.botonFormulario{
+  text-decoration: none;
+  background-color: red;
+  border: none;
+	color: white;
+	border-radius: 3em;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 43%; /* revisar margin left */
+}
+.botonFormulariologin{
+	text-decoration: none;
+  background-color: red;
+  border: none;
+	color: white;
+	text-align: center;
+	border-radius: 3em;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 36%;
+}
+.botonloginREgi{
+	text-decoration: none;
+  background-color: red;
+  border: none;
+	color: white;
+	text-align: center;
+	border-radius: 3em;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 35%;
+}
+.limitesFormu{
+	margin-top: 3%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.fondoRegistrate,
+.fondoLogin,
+.esiloPerfil{
+	background-color: #eaeaea;
+	border-radius: 10px;
+}
+.limitesLogin,
+.esiloPerfil{
+	margin-top: 3%;
+	padding: 2%;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+/* Perfil */
+main section.esiloPerfil h3{
+	font-size: 20px;
+}
+main section.esiloPerfil p{
+	font-size: 30px;
+}
+.circle{
+	height: 150px;
+	border-radius: 50%;
+}
+/* .cardPadre{
+	position: relative;
+}
+.btnHijo{
+	position: absolute;
+	right: 40%;
+	bottom: 90%;
+} */
+@media (max-width: 767px){
+  .carouselMedia,
+	aside,
+	.barraRoja{
+    display: none;
+  }
+	.esiloPerfil{
+		margin-left: 2%;
+		margin-right: 2%;
+		padding: 2%;
+	}
+}
+@media (min-width: 767px){
+  .menuMedia{
+    display: none;
+	}
+}
+@media (max-width: 480px){
+  .logo
+	{
+    display: none;
+  }
+
+}@media (min-width: 480px){
+  .logoCirculo{
+    display: none;
+  }
+}

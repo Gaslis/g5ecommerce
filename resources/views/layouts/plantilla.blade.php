@@ -1,0 +1,7 @@
+@include('../partials.head')
+@include('../partials.header')
+@yield('carousel')
+@yield('aside')
+@yield('content')
+@yield('banner')
+@include('../partials.footer')
