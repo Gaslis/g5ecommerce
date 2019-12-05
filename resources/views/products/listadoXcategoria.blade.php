@@ -32,7 +32,7 @@
         </tbody>
     </table>
     <div>
-        {{-- {{$productos->links()}} --}}
+        {{$productosXcat->links()}}
     </div>
 
     </div>
