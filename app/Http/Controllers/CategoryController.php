@@ -34,7 +34,7 @@ class CategoryController extends Controller
     public function show($id)
     {
       $categoriaXcat = Category::find($id);
-      $productosXcat = Product::where('categoria_id','like','%'.$id.'%');
+      $productosXcat = Product::where('categoria_id','like','%'.$id.'%')->get();
       return view('products.listadoXcategoria', compact('categoriaXcat','productosXcat'));
     }
 
