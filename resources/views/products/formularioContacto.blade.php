@@ -3,6 +3,7 @@
   <section class="limitesFormu">
     <h1 class="h1-faq">FORMULARIO DE CONTACTO</h1>
     <form>
+      @csrf
       <div class="form-row">
         <div class="col">
           <input type="text" class="form-control" placeholder="First name">
