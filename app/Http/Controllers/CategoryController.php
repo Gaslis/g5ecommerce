@@ -30,11 +30,12 @@ class CategoryController extends Controller
     }
 
     // La idea era mostrar por categoria
+    // ->INNER JOIN('categories','');
     public function show($id)
     {
-      $categoria = Category::find($id);
-      $productos = Product::all();
-      return view('products.listadoXcategoria', compact('categoria','productos'));
+      $categoriaXcat = Category::find($id);
+      $productosXcat = Product::where('categoria_id','like','%'.$id.'%')
+      return view('products.listadoXcategoria', compact('$categoriaXcat','$productosXcat'));
     }
 
     public function edit(Category $category)

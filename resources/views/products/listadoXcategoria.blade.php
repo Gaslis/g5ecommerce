@@ -16,7 +16,7 @@
         </thead>
         <tbody>
 
-            @foreach ($categoria->productos as $producto)
+            @foreach ($productosXcat as $producto)
                 <tr>
                 <td>{{$producto->id}}</td>
                 <td>{{$producto->nombre}}</td>

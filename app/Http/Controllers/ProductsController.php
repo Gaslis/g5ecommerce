@@ -88,11 +88,17 @@ class ProductsController extends Controller
     $producto =  Product::find($id);
     $producto->delete();
     return redirect('/administrarProducto');
-  
+
   }
   public function search(Request $request){
     $buscar = $request->busqueda;
     $productos =Product::where('nombre','like','%'.$buscar.'%')->paginate(10);
     return view('products.listadoDeProductos')->with('productos',$productos);
   }
+
+  // public function prodXcat(Request $request){
+  //
+  // }
+
+
 }
