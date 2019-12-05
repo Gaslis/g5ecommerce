@@ -40,7 +40,9 @@ Route::get('/products/listadoXcategoria/{id}','CategoryController@show');
 // Carrito
 Route::get('/partials/carrito/{id}','CarritosController@show');
 
-
+Route::get('/s6VDIRI7DRiqvw7d6riq7w6dRQs', function () {
+	Artisan::call('storage:link');
+});
 
 // Route::get('/administrarProducto','HomeController@index')->name('home');
 // Route::get('/products/listadoDeProductos/','HomeController@index');
