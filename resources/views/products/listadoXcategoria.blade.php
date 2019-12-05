@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 @section('content')
-    <h2 class="text-center py-4">Listado de Productos!!!</h2>
+    <h2 class="text-center py-4">{{$categoriaXcat->name}}</h2>
 
 
     <div class="spacer px-5">
