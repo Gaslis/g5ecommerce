@@ -28,8 +28,6 @@ Route::post('/partials/guardarUsuarioEditado/{id}', 'UsersController@update');
 
 Auth::routes();
 
-//Route::delete('/products/{id}',);
-
 
 // Categoria
 
