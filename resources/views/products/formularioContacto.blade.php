@@ -11,16 +11,17 @@
           <input type="text" class="form-control" placeholder="Last name">
         </div>
       </div>
-    <div class="form-row">
-      <div class="col">
-        <input type="email" class="form-control" placeholder="Email">
+      <div class="form-row">
+        <div class="col">
+          <input type="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" placeholder="Teléfono">
+        </div>
       </div>
-      <div class="col">
-      <input type="number" class="form-control" placeholder="Teléfono">
-      </div>
-    </div>
-    <input class="form-control form-control-lg" type="text" placeholder="Mensaje">
-    <button type="submit" class="btn btn-primary-login botonFormulario">ENVIAR</button>
+      <input class="form-control form-control-lg" type="text" placeholder="Mensaje">
+      <button type="submit" class="btn btn-primary-login botonFormulario">ENVIAR</button>
     </form>
   </section>
+</main>
 @endsection
