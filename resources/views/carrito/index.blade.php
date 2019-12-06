@@ -31,7 +31,7 @@
   </table>
   <div>
 
-{{-- <section class="col-12 col-sm-12 col-md-9 mt-5">
+<section class="col-12 col-sm-12 col-md-9 mt-5">
    <div class="row">
      <div class="panel panel-default">
 
@@ -82,6 +82,6 @@
        <div class="panel-footer align-right">
          <a class="btn btn-default" href="https://www.zecat.com.ar/AR/es/products"><i class="fa fa-chevron-left"></i> Volver</a>
 
-         <button class="btn btn-primary" urlapi="https://www.zecat.com.ar/AR/es/api/json" onclick="gtConfirm('¿Estás seguro de que deseas vaciar el carrito?', 'ecEmptyCart(1);' );" ><i class="fa fa-times"></i> Vaciar carrito</button> --}}
+         <button class="btn btn-primary" urlapi="https://www.zecat.com.ar/AR/es/api/json" onclick="gtConfirm('¿Estás seguro de que deseas vaciar el carrito?', 'ecEmptyCart(1);' );" ><i class="fa fa-times"></i> Vaciar carrito</button>
 </section>
 @endsection
