@@ -11,7 +11,7 @@ class CarritosController extends Controller
 {
     public function index()
     {
-        //
+     //return view('carrito.index')->with('carrito',$carrito);
     }
     public function add($id,$userId)
     {
@@ -21,7 +21,7 @@ class CarritosController extends Controller
       $carrito->product_id = $produAponer->id;
       $carrito->precio_unitario = $produAponer->precio;
       $carrito->save();
-      return view('carrito.index')->with('carrito',$carrito);
+
     }
 
 
