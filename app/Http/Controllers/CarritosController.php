@@ -39,7 +39,7 @@ class CarritosController extends Controller
 
     public function show($id)
     {
-      $carrito = Carrito::where('user_id','===',$id);
+      $carrito = Carrito::where('user_id','==',$id);
       return view('carrito.index')->with('carrito',$carrito);
     }
 
