@@ -1,7 +1,36 @@
 @extends('layouts.plantilla')
 @section('content')
 
-  {{$carrito}}
+  <div class="spacer px-5">
+    <table class="table">
+      <thead>
+      <tr>
+          <th>Id</th>
+          <th>User id</th>
+          <th>product_id</th>
+          <th>precio_unitario</th>
+          <th>cantidad</th>
+      </tr>
+      </thead>
+      <tbody>
+
+          @foreach ($carrito as $key => $value)
+              <tr>
+              <td>{{$value->id}}</td>
+              <td>{{$value->user_id}}</td>
+              <td>{{$value->product_id}}</td>
+              <td>{{$value->precio_unitario}}</td>
+              <td>{{$value->cantidad}}</td>
+              </tr>
+
+          @endforeach
+      <tr>
+
+      </tr>
+      </tbody>
+  </table>
+  <div>
+
 {{-- <section class="col-12 col-sm-12 col-md-9 mt-5">
    <div class="row">
      <div class="panel panel-default">

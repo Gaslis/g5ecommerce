@@ -22,8 +22,8 @@ class CarritosController extends Controller
       $carrito->product_id = $produAponer->id;
       $carrito->precio_unitario = $produAponer->precio;
       $carrito->save();
-      // return redirect('/home');
-      return view('carrito.index')->with('carrito',$carrito);
+      return redirect('/home');
+      // return view('carrito.index')->with('carrito',$carrito);
     }
 
     public function create()
@@ -39,8 +39,7 @@ class CarritosController extends Controller
     public function show($id)
     {
       $carrito = Carrito::where('user_id','==',$id);
-    //   return view('carrito.index')->with('carrito',$carrito);
-    //
+       return view('carrito.index')->with('carrito',$carrito);
     }
 
     public function edit($id)
