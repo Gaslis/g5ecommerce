@@ -55,6 +55,8 @@ class CarritosController extends Controller
 
     public function destroy($id)
     {
-        //
+      $prodDelcarrito =  Carrito::find($id);
+      $prodDelcarrito->delete();
+      return back();
     }
 }

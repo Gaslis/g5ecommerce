@@ -40,6 +40,9 @@ Route::get('/carrito/index/{userId}','CarritosController@show');
 
 Route::get('/carrito/agregar/{id}/{userId}','CarritosController@add');
 
+Route::get('/carrito/eliminar/{id}/{userId}','CarritosController@destroy');
+
+
 Route::get('/s6VDIRI7DRiqvw7d6riq7w6dRQs', function () {
 	Artisan::call('storage:link');
 });
