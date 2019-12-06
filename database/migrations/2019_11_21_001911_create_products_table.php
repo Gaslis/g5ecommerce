@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
           $table->timestamps();
           $table->integer('categoria_id');
           $table->string('poster');
+
+          $table->foreign('categoria_id')->references('id')->on('categories');
         });
     }
 

@@ -43,9 +43,9 @@
                <label for="">Subir poster del producto</label>
                <input type="file" name="poster" value="">
              </div>
-             <button type="submit" class="btn btn-primary">Agregar producto</button>
-             <a href="/administrarProducto">Volver</a>
+             <button class="btn btn-primary">Agregar producto</button>
       </form>
+      <a href="/administrarProducto">Volver</a>
     </div>
 
   </div>

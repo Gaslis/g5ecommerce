@@ -20,6 +20,9 @@ class CreateCartProductTable extends Migration
             $table->integer('cantidad');
             $table->float('precio_unitario');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
