@@ -35,12 +35,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/products/listadoXcategoria/{id}','CategoryController@show');
 
+
 // Carrito
 Route::get('/carrito/index/{userId}','CarritosController@show');
 
 Route::get('/carrito/agregar/{id}/{userId}','CarritosController@add');
 
-Route::get('/carrito/eliminar/{id}/{userId}','CarritosController@destroy');
+Route::get('/carrito/eliminar/{id}','CarritosController@destroy');
 
 
 Route::get('/s6VDIRI7DRiqvw7d6riq7w6dRQs', function () {
