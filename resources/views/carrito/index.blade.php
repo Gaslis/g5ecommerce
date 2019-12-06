@@ -30,8 +30,8 @@
 
       </tr>
       </tbody>
-  </table>
-  
+    </table>
+  </div>
 
 {{-- <section class="col-12 col-sm-12 col-md-9 mt-5">
    <div class="row">
