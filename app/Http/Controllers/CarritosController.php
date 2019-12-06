@@ -57,6 +57,6 @@ class CarritosController extends Controller
     {
       $prodDelcarrito =  Carrito::find($id);
       $prodDelcarrito->delete();
-      return back();
+      return redirect('/home');
     }
 }
