@@ -31,7 +31,7 @@
       </tr>
       </tbody>
   </table>
-  <div>
+  
 
 {{-- <section class="col-12 col-sm-12 col-md-9 mt-5">
    <div class="row">
@@ -90,4 +90,7 @@
 
          <button class="btn btn-primary" urlapi="https://www.zecat.com.ar/AR/es/api/json" onclick="gtConfirm('¿Estás seguro de que deseas vaciar el carrito?', 'ecEmptyCart(1);' );" ><i class="fa fa-times"></i> Vaciar carrito</button>
 </section> --}}
+
+
+
 @endsection
