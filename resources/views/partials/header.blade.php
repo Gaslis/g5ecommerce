@@ -29,7 +29,7 @@
     <a class="dropdown-item" href="#">Link 2</a>
     <a class="dropdown-item" href="#">Link 3</a>
   </div>
-  <a href="carrito.php">
+  <a href="/carrito/index">
     <button type="submit" class="btn btn-primary botonChango"><ion-icon name="cart"></ion-icon></button>
   </a>
 </div>
