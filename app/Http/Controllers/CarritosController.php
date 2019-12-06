@@ -38,7 +38,7 @@ class CarritosController extends Controller
 
     public function show($id)
     {
-      $carrito = Carrito::where('user_id','like','%'.$id.'%')->get();
+      $carrito = Carrito::where('user_id','like','2')->get();
        return view('carrito.index')->with('carrito',$carrito);
     }
 

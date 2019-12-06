@@ -14,7 +14,7 @@
       </thead>
       <tbody>
 
-          @foreach ($carrito as $key => $value)
+          @foreach ($carrito as $value)
               <tr>
               <td>{{$carrito->id}}</td>
               <td>{{$carrito->user_id}}</td>
