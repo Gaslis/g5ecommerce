@@ -39,6 +39,7 @@
             <p class="card-text"><p>{{ $producto->descripcion }}</p></p>
             <p class="card-text"><p>{{ $producto->precio }}</p></p>
             <a href="/products/detalleProducto/{{ $producto->id }}" class="btn btn-primary">Ver más</a>
+            <a href="/carrito/agregar/{{ $producto->id }}/{{ Auth::id() }}" class="btn btn-primary">Agregar al carrito</a>
           </div>
         </div>
       @endforeach
