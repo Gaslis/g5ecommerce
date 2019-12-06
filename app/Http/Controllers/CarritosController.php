@@ -11,8 +11,7 @@ class CarritosController extends Controller
 {
     public function index($id)
     {
-      $carrito = Carrito::where('user_id','===',$id);
-      return view('carrito.index')->with('carrito',$carrito);
+
     }
 
     public function add($id,$userId)
@@ -40,8 +39,8 @@ class CarritosController extends Controller
 
     public function show($id)
     {
-      $carrito = Carrito::find($id);
-      return view('partials.carrito')->with('carrito',$carrito);
+      $carrito = Carrito::where('user_id','===',$id);
+      return view('carrito.index')->with('carrito',$carrito);
     }
 
     public function edit($id)
