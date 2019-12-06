@@ -11,6 +11,18 @@ class CarritosController extends Controller
     {
         //
     }
+    public function add($id)
+    {
+      $produAponer = Product::find($id);
+      $carrito = new Carrito::all();
+      $carrito->user_id = Auth::id();
+      $carrito->product_id = $produAponer->id;
+      $carrito->precio_unitario = $produAponer->precio;
+      $carrito->save();
+      return view('carrito.index')->with('carrito',$carrito);
+    }
+
+
     public function create()
     {
         //
@@ -38,7 +50,7 @@ class CarritosController extends Controller
         //
     }
 
-    
+
     public function destroy($id)
     {
         //
