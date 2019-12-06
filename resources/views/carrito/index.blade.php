@@ -16,11 +16,11 @@
 
           @foreach ($carrito as $value)
               <tr>
-              <td>{{$carrito->id}}</td>
-              <td>{{$carrito->user_id}}</td>
-              <td>{{$carrito->product_id}}</td>
-              <td>{{$carrito->precio_unitario}}</td>
-              <td>{{$carrito->cantidad}}</td>
+              <td>{{$value->id}}</td>
+              <td>{{$value->user_id}}</td>
+              <td>{{$value->product_id}}</td>
+              <td>{{$value->precio_unitario}}</td>
+              <td>{{$value->cantidad}}</td>
               </tr>
 
           @endforeach
