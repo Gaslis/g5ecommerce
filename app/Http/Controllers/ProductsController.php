@@ -54,7 +54,9 @@ class ProductsController extends Controller
   public function show($id)
   {
     $producto = Product::find($id);
-    return view('products.detalleProducto')->with('producto',$producto);
+    $categorias = Category::all();
+    // return view('products.detalleProducto')->with('producto',$producto);
+    return view('products.detalleProducto', compact('producto ', 'categorias'));
   }
 
   public function edit($id)

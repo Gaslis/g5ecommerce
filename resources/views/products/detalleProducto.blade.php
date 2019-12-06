@@ -1,9 +1,9 @@
 @extends('layouts.plantilla')
 
-{{-- @section('aside')
+@section('aside')
   @include('../partials.aside')
 
-@endsection --}}
+@endsection
 
 @section('content')
   <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde" style="">
