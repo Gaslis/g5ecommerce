@@ -9,9 +9,9 @@ use App\Http\Controllers\Controller;
 
 class CarritosController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-      $carrito = Carrito::where('user_id','===',{{Auth::id()}});  
+      $carrito = Carrito::where('user_id','===',$id);
       return view('carrito.index')->with('carrito',$carrito);
     }
 
