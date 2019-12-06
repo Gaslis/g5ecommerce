@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Carrito;
+use App\Product;
 
 class CarritosController extends Controller
 {
@@ -14,7 +15,7 @@ class CarritosController extends Controller
     public function add($id)
     {
       $produAponer = Product::find($id);
-      $carrito = new Carrito::all();
+      $carrito = new Carrito;
       $carrito->user_id = Auth::id();
       $carrito->product_id = $produAponer->id;
       $carrito->precio_unitario = $produAponer->precio;
