@@ -40,7 +40,8 @@ class CarritosController extends Controller
     {
       $carrito = Carrito::where('user_id','==',$id);
     //   return view('carrito.index')->with('carrito',$carrito);
-    // }
+    //
+    }
 
     public function edit($id)
     {
