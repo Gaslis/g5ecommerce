@@ -1,7 +1,10 @@
 @extends('layouts.plantilla')
 @section('content')
 
-  {{$carrito}}
+  @foreach($carrito->ac['0'] as $link)
+      <a href="{{ $link['url'] }}">This is a link</a>
+  @endforeach
+  
 {{-- <section class="col-12 col-sm-12 col-md-9 mt-5">
    <div class="row">
      <div class="panel panel-default">
