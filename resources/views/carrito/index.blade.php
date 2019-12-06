@@ -22,7 +22,7 @@
               <td>{{$value->product_id}}</td>
               <td>{{$value->precio_unitario}}</td>
               <td>{{$value->cantidad}}</td>
-              <td><a href="/products/eliminarProducto/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
+              <td><a href="/carrito/eliminar/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
               </tr>
 
           @endforeach
