@@ -14,16 +14,16 @@
       </thead>
       <tbody>
 
-          {{-- @foreach ($carrito as $key => $value) --}}
+          @foreach ($carrito as $key => $value)
               <tr>
-              {{-- <td>{{$carrito->id}}</td> --}}
+              <td>{{$carrito->id}}</td>
               <td>{{$carrito->user_id}}</td>
               <td>{{$carrito->product_id}}</td>
               <td>{{$carrito->precio_unitario}}</td>
               <td>{{$carrito->cantidad}}</td>
               </tr>
 
-          {{-- @endforeach --}}
+          @endforeach
       <tr>
 
       </tr>
