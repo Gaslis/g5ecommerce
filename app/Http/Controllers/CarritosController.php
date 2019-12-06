@@ -13,11 +13,11 @@ class CarritosController extends Controller
     {
         //
     }
-    public function add($id)
+    public function add($id,$userId)
     {
       $produAponer = Product::find($id);
       $carrito = new Carrito;
-      $carrito->user_id = Auth::id();
+      $carrito->user_id = $userId;
       $carrito->product_id = $produAponer->id;
       $carrito->precio_unitario = $produAponer->precio;
       $carrito->save();
