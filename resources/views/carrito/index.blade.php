@@ -10,6 +10,7 @@
           <th>product_id</th>
           <th>precio_unitario</th>
           <th>cantidad</th>
+          <th>Eliminar</th>
       </tr>
       </thead>
       <tbody>
@@ -21,6 +22,7 @@
               <td>{{$value->product_id}}</td>
               <td>{{$value->precio_unitario}}</td>
               <td>{{$value->cantidad}}</td>
+              <td><a href="/products/eliminarProducto/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
               </tr>
 
           @endforeach
@@ -31,7 +33,7 @@
   </table>
   <div>
 
-<section class="col-12 col-sm-12 col-md-9 mt-5">
+{{-- <section class="col-12 col-sm-12 col-md-9 mt-5">
    <div class="row">
      <div class="panel panel-default">
 
@@ -43,7 +45,8 @@
            <tr>
              <th width="30%" colspan="2">Item</th>
              <th width="10%">Cantidad</th>
-             <th width="10%">Color</th><th width="10%">Precio de Lista (unitario)</th>
+             <th width="10%">Color</th>
+             <th width="10%">Precio de Lista (unitario)</th>
              <th width="10%">Descuento</th>
              <th width="10%">Precio Final (unitario)</th>
              <th width="15%">Subtotal</th><th width="15%">Acciones</th>
@@ -59,23 +62,26 @@
            class="form-control input-height" onchange="javascript:ecCartChange(678,'2fbb8bb9172224789ca6eb1ebc2c2bff476a272f','https://www.zecat.com.ar/AR/es/api/json');">
          </td>
          <td align="center">
-         <input type="hidden" id="color_678" value="000000">
-         <div style="background-color:#000000;" class="color" data-toggle="tooltip" title="" data-original-title="Negro"></div>
-         </td><td id="price_678">$--</td>
-           <td id="discount_678">--%</td>
-           <td id="final_price_678">$--</td>
-           <td id="subtotal_678">$--</td>
-           <td align="center">
-         <a id="deleteBtn_678" ec-uniqid="2fbb8bb9172224789ca6eb1ebc2c2bff476a272f" ec-urlapi="https://www.zecat.com.ar/AR/es/api/json" href="javascript:gtConfirm( '¿Está seguro de que desea eliminar este item?', 'ecCartDelete(678);' );"
+           <input type="hidden" id="color_678" value="000000">
+           <div style="background-color:#000000;" class="color" data-toggle="tooltip" title="" data-original-title="Negro"></div>
+         </td>
+         <td id="price_678">$--</td>
+         <td id="discount_678">--%</td>
+         <td id="final_price_678">$--</td>
+         <td id="subtotal_678">$--</td>
+         <td align="center">
+           <a id="deleteBtn_678" ec-uniqid="2fbb8bb9172224789ca6eb1ebc2c2bff476a272f" ec-urlapi="https://www.zecat.com.ar/AR/es/api/json" href="javascript:gtConfirm( '¿Está seguro de que desea eliminar este item?', 'ecCartDelete(678);' );"
          class="btn btn-primary btn-xs">
-         <i class="fa fa-trash"></i> Borrar Item</a></td>
-         </tr><tr id="item_66">
-
-         </tr><tr>
-               <td colspan="7"><strong id="total">Total</strong></td>
-               <td><strong id="ec-cart-detail-total">$0.00</strong></td>
-               <td></td>
-             </tr>
+          <i class="fa fa-trash"></i> Borrar Item</a></td>
+         </tr>
+         <tr id="item_66">
+         </tr>
+          <tr>
+           <td colspan="7"><strong id="total">Total</strong></td>
+           <td><strong id="ec-cart-detail-total">$0.00</strong></td>
+            <td>
+            </td>
+          </tr>
          </tbody>
        </table>      <small><small>*los precios no incluyen IVA</small></small>
        </div>
@@ -83,5 +89,5 @@
          <a class="btn btn-default" href="https://www.zecat.com.ar/AR/es/products"><i class="fa fa-chevron-left"></i> Volver</a>
 
          <button class="btn btn-primary" urlapi="https://www.zecat.com.ar/AR/es/api/json" onclick="gtConfirm('¿Estás seguro de que deseas vaciar el carrito?', 'ecEmptyCart(1);' );" ><i class="fa fa-times"></i> Vaciar carrito</button>
-</section>
+</section> --}}
 @endsection
