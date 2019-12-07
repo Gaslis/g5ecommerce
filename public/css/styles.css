@@ -72,6 +72,7 @@ div nav.segundoNav a:hover{
   text-align: center;
   padding: 50px 0px 50px 0px;
 }
+
 .tamño{
 	height: 450px;
 }
@@ -91,6 +92,11 @@ div nav.segundoNav a:hover{
   border: none;
   font-size: 24px;
 }
+.badge{
+	font-size :12px;
+	color:white;
+	background-color: black;
+}
 /* .botonChango:hover{
   color: white;
 	border: 1px solid red;
@@ -104,18 +110,29 @@ div nav.segundoNav a:hover{
 	color:#ea3030;
 	border: none;
 }
+.btn3{
+	background-color: rgba(255, 255, 255, 0);
+	color:#ea3030;
+	border: none;
+}
+/* .btn3:hover{
+	background-color: #ea3030;
+	border: none;
+} */
 
-main aside div button.btn {
+
+main aside div button a.btn {
 	text-align: left;
 	text-decoration: none;
   background-color: rgba(255, 255, 255, 0);
   color: black;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
 }
-button.btn:hover{
-	color: white;
-	background-color: #ea3030;
+button a.btn:hover{
+	color: #ea3030;
+	/* color: white;
+	background-color: #ea3030; */
 }
 .tarjetasSinborde{
   border: none;

@@ -25,21 +25,51 @@
     ☰
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Link 1</a>
-    <a class="dropdown-item" href="#">Link 2</a>
-    <a class="dropdown-item" href="#">Link 3</a>
+    @auth
+      <a href="/partials/perfil/{{ Auth::id() }}">{{Auth::user()->name}}  <ion-icon name="person"></ion-icon></a>
+
+    @else
+      <a href="{{ route('login') }}">Ingresá  <ion-icon name="person"></ion-icon></a>
+
+    @endauth
+    @auth
+
+      <a class="" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+      </a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
+    @else
+
+      <a href="{{ route('register') }}">Registrate  <ion-icon name="create"></ion-icon></a>
+    @endauth
+    @foreach ($categorias as  $categoria)
+    <a class="dropdown-item" href="/products/listadoXcategoria/{{ $categoria->id }}">{{ $categoria->name }}</a>
+    @endforeach
   </div>
-  <a href="/carrito/index/{{Auth::id()}}">
-    <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon></button>
-  </a>
+  @auth
+    <a href="/carrito/index/{{Auth::id()}}">
+      <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon><span class="badge badge-light">1</span>
+        <span class="sr-only badge">unread messages</span>
+      </button>
+      {{-- <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon></button> --}}
+    </a>
+    @else
+      <a href="/home">
+        <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon></button>
+      </a>
+    @endauth
 </div>
   </nav>
   <div class="row barraRoja py-1">
     <nav class="col-6 primerNav">
       <a href="mailto: info@graficar.com.ar"><ion-icon name="mail"></ion-icon> contacto@graficar.com</a>
-      @if(Auth::id()===1){
+      @if(Auth::id()===1)
         <a href="/administrarProducto"><ion-icon name=""></ion-icon>Administrar Productos</a>
-      }@else{
+      @else
       <a href="contacto-consulta.php"><ion-icon name="call"></ion-icon> (011) 15 4054 6753</a>}
       @endif
     </nav>
