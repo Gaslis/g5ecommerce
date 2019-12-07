@@ -1,5 +1,5 @@
 <footer>
-  <section class="row fin mt-5 pt-5">
+  <section class="row fin  pt-5">
     <article class="col-12 col-sm-4 col-md-4 mb-5">
       <h4>Ayuda</h4>
       <a href="faq.php">Preguntas Frecuentes</a><br>

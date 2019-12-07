@@ -1,12 +1,11 @@
 @extends('layouts.plantilla')
 @section('content')
 
-  <div class="spacer px-5">
+  {{-- <div class="spacer px-5">
     <table class="table">
       <thead>
       <tr>
           <th>Id</th>
-          <th>User id</th>
           <th>product_id</th>
           <th>precio_unitario</th>
           <th>cantidad</th>
@@ -15,13 +14,12 @@
       </thead>
       <tbody>
 
-          @foreach ($carrito as $value)
+          @foreach ($carrito->products as $value)
               <tr>
               <td>{{$value->id}}</td>
-              <td>{{$value->user_id}}</td>
-              <td>{{$value->product_id}}</td>
-              <td>{{$value->precio_unitario}}</td>
-              <td>{{$value->cantidad}}</td>
+              <td>{{$value->nombre}}</td>
+              <td>{{$value->pivot->precio_unitario}}</td>
+              <td>{{$value->pivot->cantidad}}</td>
               <td><a href="/carrito/eliminar/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
               </tr>
 
@@ -31,8 +29,71 @@
       </tr>
       </tbody>
     </table>
-  </div>
+  </div> --}}
+  <header id="site-header">
+		<div class="container">
+			<h1>Carrito de compras</h1>
+		</div>
+	</header>
 
+  <div class="container">
+
+        <section id="cart">
+          @foreach ($carrito->products as $value)
+            <article class="product">
+                <header>
+                    <a href="/carrito/eliminar/{{$value->id}}" class="remove">
+                        <img src="/storage/{{$value->poster}}" alt="">
+                        <h3>Eliminar</h3>
+                    </a>
+                </header>
+
+                <div class="content">
+
+                    <h1>{{$value->nombre}}</h1>
+
+                    {{$value->descripcion}}
+
+                    {{-- <div title="You have selected this product to be shipped in the color yellow." style="top: 0" class="color yellow"></div>
+                    <div style="top: 43px" class="type small">XXL</div> --}}
+                </div>
+
+                <footer class="content">
+                    <span class="qt-minus">-</span>
+                    <span class="qt">{{$value->pivot->cantidad}}</span>
+                    <span class="qt-plus">+</span>
+                    <h2 class="full-price">
+
+                    </h2>
+
+                    <h2 class="price">
+                        {{$value->pivot->precio_unitario}}
+                    </h2>
+                </footer>
+            </article>
+  @endforeach
+        </section>
+
+    </div>
+
+    <section id="site-footer">
+        <div class="container clearfix">
+
+            <div class="left">
+                <h2 class="subtotal">Subtotal: <span>163.96</span>$</h2>
+                <h3 class="tax">Taxes (5%): <span>8.2</span>$</h3>
+                <h3 class="shipping">Shipping: <span>5.00</span>$</h3>
+            </div>
+
+            <div class="right">
+                <h1 class="total">Total: <span>177.16</span>€</h1>
+                <a class="btn2">Checkout</a>
+            </div>
+
+        </div>
+
+
+</section>
 {{-- <section class="col-12 col-sm-12 col-md-9 mt-5">
    <div class="row">
      <div class="panel panel-default">

@@ -30,7 +30,7 @@
     <a class="dropdown-item" href="#">Link 3</a>
   </div>
   <a href="/carrito/index/{{Auth::id()}}">
-    <button type="submit" class="btn btn-primary botonChango"><ion-icon name="cart"></ion-icon></button>
+    <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon></button>
   </a>
 </div>
   </nav>

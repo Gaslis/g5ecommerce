@@ -37,14 +37,18 @@
           <div class="card-body">
             <h5 class="card-title"><p>{{ $producto->nombre }}</p></h5>
             <p class="card-text"><p>{{ $producto->descripcion }}</p></p>
-            <p class="card-text"><p>{{ $producto->precio }}</p></p>
-            <a href="/products/detalleProducto/{{ $producto->id }}" class="btn btn-primary">Ver más</a>
+            <p class="card-text"><p>${{ $producto->precio }}</p></p>
+            <a href="/products/detalleProducto/{{ $producto->id }}" class="btn btn-primary m-1">Ver más</a>
             <a href="/carrito/agregar/{{ $producto->id }}/{{ Auth::id() }}" class="btn btn-primary">Agregar al carrito</a>
           </div>
         </div>
       @endforeach
     </div>
+    <div>
+        {{$productos->links()}}
+    </div>
   </section>
+
 </main>
 @endsection
 @section('banner')

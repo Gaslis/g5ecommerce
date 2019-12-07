@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
       $categorias = Category::all();
-      $productos = Product::all();
+      $productos = Product::paginate(8);;
 
       return view('index', [
           'productos' => $productos,

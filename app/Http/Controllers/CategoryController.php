@@ -10,7 +10,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-      // dd(Category::all());
+
       $categorias = Category::all();
       // dd($categorias->productos);
 
@@ -29,12 +29,10 @@ class CategoryController extends Controller
         //
     }
 
-    // La idea era mostrar por categoria
-    // ->INNER JOIN('categories','');
     public function show($id)
     {
       $categoriaXcat = Category::find($id);
-      $productosXcat = Product::where('categoria_id','like','%'.$id.'%')->get();
+      $productosXcat = $categoriaXcat->products();
       return view('products.listadoXcategoria', compact('categoriaXcat','productosXcat'));
     }
 

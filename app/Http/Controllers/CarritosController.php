@@ -14,14 +14,17 @@ class CarritosController extends Controller
 
     }
 
-    public function add($id,$userId)
+    public function add($id)
     {
-      $produAponer = Product::find($id);
-      $carrito = new Carrito;
-      $carrito->user_id = $userId;
-      $carrito->product_id = $produAponer->id;
-      $carrito->precio_unitario = $produAponer->precio;
-      $carrito->save();
+      $product = Product::find($id);
+
+      $cart = auth()->user()->carts()->create();
+
+      $cart->products()->attach($id, [
+        'cantidad' => 1,
+        'precio_unitario' => $product->precio,
+      ]);
+
       return redirect('/home');
       // return view('carrito.index')->with('carrito',$carrito);
     }
@@ -38,8 +41,8 @@ class CarritosController extends Controller
 
     public function show($id)
     {
-      $carrito = Carrito::where('user_id','like','%'.$id.'%')->get();
-       return view('carrito.index')->with('carrito',$carrito);
+      $carrito = Carrito::with('products')->where('user_id','like','%'.$id.'%')->latest()->first();
+      return view('carrito.index')->with('carrito',$carrito);
     }
 
     public function edit($id)
