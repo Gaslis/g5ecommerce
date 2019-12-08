@@ -16,6 +16,7 @@ class CreateCarritosTable extends Migration
         Schema::create('carritos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
