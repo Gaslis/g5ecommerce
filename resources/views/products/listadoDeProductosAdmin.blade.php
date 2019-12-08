@@ -3,7 +3,7 @@
     <h2 class="text-center py-4">Editar productos</h2>
 
 
-    <div class="spacer px-5">
+    <div class="spacer px-5 mb-5">
       <table class="table">
         <thead>
         <tr>

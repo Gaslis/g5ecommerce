@@ -1,12 +1,12 @@
 <header>
   <nav class="col 12 navbar navbar-light p-3">
-    <div class="col-3 col-sm-4 col-md-3">
+    <div class=" col-sm-4 col-md-3">
       <a href="/home">
         <img src="/img/logo-graficar.png" alt="" class="logo">
-        <img src="/img/logo-circulo.png" alt="" class="logoCirculo">
+        {{-- <img src="/img/logo-circulo.png" alt="" class="logoCirculo">col-3 --}}
       </a>
     </div>
-  <div class="col-5 col-sm-5 col-md-8 mb-3">
+  <div class="col-6 col-sm-5 col-md-7 mb-3">
     <form class="pt-3" action="/products/buscarProducto" method="GET">
       <div class="input-group">
         <input type="text" class="form-control searchRedondo" name="busqueda" value="" placeholder="Encontra los productos que estas buscando...">
@@ -20,7 +20,7 @@
     <button type="submit" class="btn btn-primary botonMenu menuMedia">☰</button>
 
   </div> --}}
-  <div class="dropdown col-4 col-sm-3 col-md-1">
+  <div class="dropdown col-6 col-sm-3 col-md-2">
   <button type="button" class="btn btn-primary dropdown-toggle botonMenu menuMedia" data-toggle="dropdown">
     ☰
   </button>
@@ -46,9 +46,9 @@
 
       <a href="{{ route('register') }}">Registrate  <ion-icon name="create"></ion-icon></a>
     @endauth
-    @foreach ($categorias as  $categoria)
+    {{-- @foreach ($categorias as  $categoria)
     <a class="dropdown-item" href="/products/listadoXcategoria/{{ $categoria->id }}">{{ $categoria->name }}</a>
-    @endforeach
+    @endforeach --}}
   </div>
   @auth
     <a href="/carrito/index/{{Auth::id()}}">
