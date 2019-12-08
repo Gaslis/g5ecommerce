@@ -39,7 +39,7 @@
             {{-- <p class="card-text"><p>{{ $producto->descripcion }}</p></p> --}}
             <p class="card-text"><p>${{ $producto->precio }}</p></p>
 
-            <a href="/carrito/agregar/{{ $producto->id }}/{{ Auth::id() }}" class="btn btn-primary mb-2">Agregar al carrito</a>
+            <a href="/carrito/agregar/{{ $producto->id }}/{{ Auth::id() }}" class="btn btn-primary mb-2">Agregar al carrito</a><br>
             <a href="/products/detalleProducto/{{ $producto->id }}" class="btn3">Ver más</a>
           </div>
         </div>
