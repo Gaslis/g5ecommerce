@@ -15,21 +15,16 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->string('nombre');
-          $table->string('precio');
-          $table->string('descripcion');
+          $table->string('nombre', 100);
+          $table->string('precio', 100);
+          $table->string('descripcion', 1000);
           $table->timestamps();
-          $table->integer('categoria_id');
-          $table->string('poster');
+          $table->bigInteger('categoria_id')->unsigned();
+          $table->string('poster', 255);
           $table->foreign('categoria_id')->references('id')->on('categories');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('products');

@@ -14,13 +14,13 @@
       </thead>
       <tbody>
 
-          @foreach ($carrito->products as $value)
+          @foreach ($carrito->products as $cart)
               <tr>
-              <td>{{$value->id}}</td>
-              <td>{{$value->nombre}}</td>
-              <td>{{$value->pivot->precio_unitario}}</td>
-              <td>{{$value->pivot->cantidad}}</td>
-              <td><a href="/carrito/eliminar/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
+              <td>{{$cart->id}}</td>
+              <td>{{$cart->nombre}}</td>
+              <td>{{$cart->pivot->precio_unitario}}</td>
+              <td>{{$cart->pivot->cantidad}}</td>
+              <td><a href="/carrito/eliminar/{{$cart->id}}"><ion-icon name="trash"></ion-icon></td></a>
               </tr>
 
           @endforeach
@@ -39,20 +39,21 @@
   <div class="container">
 
         <section id="cart">
-          @foreach ($carrito->products as $value)
+          @foreach ($carts as $cart)
             <article class="product">
                 <header>
-                    <a href="/carrito/eliminar/{{$value->id}}" class="remove">
-                        <img src="/storage/{{$value->poster}}" alt="">
+
+                    {{-- <a href="/carrito/eliminar/{{$cart->id}}" class="remove"> --}}
+                        <img src="/storage/productosImg/{{$cart->image_product}}" alt="">
                         <h3>Eliminar</h3>
                     </a>
                 </header>
 
                 <div class="content">
 
-                    <h1>{{$value->nombre}}</h1>
+                    <h1>{{$cart->nombre}}</h1>
 
-                    {{$value->descripcion}}
+                    {{-- <p>{{$cart->products->descripcion}}</p> --}}
 
                     {{-- <div title="You have selected this product to be shipped in the color yellow." style="top: 0" class="color yellow"></div>
                     <div style="top: 43px" class="type small">XXL</div> --}}
@@ -60,14 +61,14 @@
 
                 <footer class="content">
                     <span class="qt-minus">-</span>
-                    <span class="qt">{{$value->pivot->cantidad}}</span>
+                    <span class="qt">{{$cart->cantidad}}</span>
                     <span class="qt-plus">+</span>
                     <h2 class="full-price">
 
                     </h2>
 
                     <h2 class="price">
-                        {{$value->pivot->precio_unitario}}
+                        
                     </h2>
                 </footer>
             </article>

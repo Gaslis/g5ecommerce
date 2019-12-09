@@ -32,8 +32,7 @@ class CategoryController extends Controller
     public function show($id)
     {
       $cat = Category::find($id);
-      $productosXcat = $cat->products();
-      return view('products.listadoXcategoria', compact('cat','productosXcat'));
+      return view('products.listadoXcategoria', compact('cat'));
     }
 
     public function edit(Category $category)

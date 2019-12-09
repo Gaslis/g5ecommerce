@@ -16,7 +16,15 @@ class CreateCarritosTable extends Migration
         Schema::create('carritos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBiginteger('user_id')->unsigned();
+            $table->unsignedBiginteger('product_id')->unsigned();
+            $table->string('precio', 100);
+            $table->integer('cantidad');
+            $table->boolean('estadoDeCompra');
+            $table->string('image_product', 500);
+            // $table->foreign('product_id')->references('id')->on('products');
+            // $table->foreign('user_id')->references('id')->on('users');
+
         });
     }
 

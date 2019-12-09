@@ -45,9 +45,11 @@ class UsersController extends Controller
 
 
       if ($request->hasFile('image')) {
-        $ruta =  $request->file('image')->store('public');
+        $ruta =  $request->file('image')->store('public/avatares');
         $nombreArchivo = basename($ruta);
-        $usuarioEditar->image = $nombreArchivo;
+        $usuarioEditar->profile = $nombreArchivo;
+      }else{
+        $usuarioEditar->profile = $usuarioEditar->profile;
       }
 
       $usuarioEditar->update();

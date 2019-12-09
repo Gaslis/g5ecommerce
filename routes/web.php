@@ -37,9 +37,9 @@ Route::get('/products/listadoXcategoria/{id}','CategoryController@show');
 
 
 // Carrito
-Route::get('/carrito/index/{userId}','CarritosController@show');
+Route::get('/carrito/index','CarritosController@index');
 
-Route::get('/carrito/agregar/{id}/{userId}','CarritosController@add');
+Route::post('/carrito/agregar/','CarritosController@add');
 
 Route::get('/carrito/eliminar/{id}','CarritosController@destroy');
 

@@ -24,7 +24,7 @@
                       </form> --}}
       </div>
       <div class="col-12 col-sm-6 col-md-6">
-        <img src="/storage/{{$user->image}}" class=" circle" alt="">
+        <img src="/storage/avatares/{{$user->profile}}" class=" circle" alt="">
 
       </div>
 

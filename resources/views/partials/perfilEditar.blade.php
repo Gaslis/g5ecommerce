@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-6">
-          <img src="/storage/{{$usuarioEditar->image}}" class=" circle" alt="">
+          <img src="/storage/avatares/{{$usuarioEditar->profile}}" class=" circle" alt="">
           <div class="">
             <input type="file" name="image" value="">
           </div>
