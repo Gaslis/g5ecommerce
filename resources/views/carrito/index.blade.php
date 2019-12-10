@@ -60,16 +60,17 @@
             <div class="left">
                 <h2 class="subtotal">Subtotal: $<span>{{$carts->sum('precio')-$carts->sum('precio')*0.21}}</span></h2>
                 <h3 class="tax">IVA (21%): $<span>{{$carts->sum('precio')*0.21}}</span></h3>
-                <h3 class="shipping">Envio: $<span>5.00</span></h3>
+                <h3 class="shipping">Envio: $<span>300</span></h3>
             </div>
 
             <div class="right">
-                <h1 class="total">Total: $<span>{{$carts->sum('precio')+5}}</span></h1>
+                <h1 class="total">Total: $<span>{{$carts->sum('precio')+300}}</span></h1>
                 <form class="remove" action="/carrito/cerrarCompra/" method="post">
                   @csrf
                   <input type="hidden" name="estadoDeCompra" value="id">
                   <button type="submit" class="btn2 btn-primary" name="button">Pagar</button>
                 {{-- <a class="btn2">Checkout</a> --}}
+
                 </form>
             </div>
 

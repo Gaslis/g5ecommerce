@@ -46,14 +46,14 @@
 
       <a href="{{ route('register') }}">Registrate  <ion-icon name="create"></ion-icon></a>
     @endauth
-    {{-- @foreach ($categorias as  $categoria)
+    @foreach ($categorias as  $categoria)
     <a class="dropdown-item" href="/products/listadoXcategoria/{{ $categoria->id }}">{{ $categoria->name }}</a>
-    @endforeach --}}
+    @endforeach
   </div>
   @auth
     <a href="/carrito/index/">
       <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon><span class="badge badge-light">
-        {{-- {{$carts->sum('cantidad')}} --}}
+        {{$carts->sum('cantidad')}}
       </span>
         <span class="sr-only badge">unread messages</span>
       </button>
