@@ -33,7 +33,7 @@
     <div class="row">
       @foreach ($productos as $producto)
         <div class="card venta col-12 col-sm-6 col-md-3 tarjetasSinborde pt-2" style="">
-          <img src="/storage/productosImg/{{ $producto->poster}}" class="card-img-top" alt="..." width="224" height="224">
+          <img src="/storage/{{$producto->poster}}" class="card-img-top" alt="..." width="224" height="224">
           <div class="card-body">
             <h5 class="card-title"><p>{{ $producto->nombre }}</p></h5>
             {{-- <p class="card-text"><p>{{ $producto->descripcion }}</p></p> --}}
@@ -43,6 +43,8 @@
               @csrf
               <input type="hidden" name="id" value="{{$producto->id}}">
               <button type="submit" class="btn btn-primary" name="button">Agregar al Carrito</button><br>
+              <input type="hidden" name="id" value="{{$producto->id}}">
+              </form>
             <a href="/products/detalleProducto/{{ $producto->id }}" class="btn3">Ver más</a>
           </div>
         </div>

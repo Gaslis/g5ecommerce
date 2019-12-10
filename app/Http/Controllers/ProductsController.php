@@ -5,19 +5,31 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\Carrito;
+use Auth;
 
 class ProductsController extends Controller
 {
   public function index()
-  {   $categorias = Category::all();
+  { 
+  //   $categorias = Category::all();
+  //
+  //     $productos = Product::paginate(10);
+  //     // return view('index', [
+  //     //
+  //     //     'productos' => $productos,
+  //     //     'categorias'=> $categorias
+  //     // ]);
+  // return view('products.listadoDeProductosAdmin')->with('productos',$productos);
+      $categorias = Category::all();
+      $productos = Product::paginate(8);;
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
 
-      $productos = Product::paginate(10);
-      // return view('index', [
-      //
-      //     'productos' => $productos,
-      //     'categorias'=> $categorias
-      // ]);
-      return view('products.listadoDeProductosAdmin')->with('productos',$productos);
+  return view('products.listadoDeProductosAdmin', [
+      'productos' => $productos,
+      'categorias'=> $categorias,
+      'carts'     => $carts,
+  ]);
+
   }
 
   public function create()

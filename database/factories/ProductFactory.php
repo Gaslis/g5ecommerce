@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 use App\Category;
 
 $factory->define(Product::class, function (Faker $faker) {
-    $path = storage_path('app/public/productosImg');
+    $path = storage_path('app/public');
     return [
         'id'            =>  $faker->numberBetween(1,900),
         'nombre'        =>  $faker->word,

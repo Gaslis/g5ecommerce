@@ -10,7 +10,7 @@
   <div class="container">
 
         <section id="cart">
-          @forelse ($carts as $cart)
+          @foreach ($carts as $cart)
             <article class="product">
                 <header>
 
@@ -18,7 +18,7 @@
 
                       {{-- <input type="hidden" name="id" value="{{$cart->id}}">
                       <button type="submit" class="btn btn-primary" name="button">Eliminar</button> --}}
-                        <img src="/storage/productosImg/{{$cart->image_product}}" alt="">
+                        <img src="/storage/{{$cart->image_product}}" alt="">
                         <h3>Eliminar</h3>
                     </a>
                 </header>
@@ -34,22 +34,22 @@
                 </div>
 
                 <footer class="content">
-                    <span class="qt-minus">-</span>
+                    {{-- <span class="qt-minus">-</span> --}}
                     <span class="qt">{{$cart->cantidad}}</span>
-                    <span class="qt-plus">+</span>
+                    {{-- <span class="qt-plus">+</span> --}}
                     <h2 class="full-price">
 
                     </h2>
 
-                    <h2 class="price">
+                    <h2 class="price">Precio: $
                       {{$cart->precio}}
                     </h2>
                 </footer>
-              @empty
-                <h2>Su carrito se encuentra vacio</h2>
+              {{-- @empty
+                <h2>Su carrito se encuentra vacio</h2> --}}
 
             </article>
-          @endforelse
+          @endforeach
         </section>
 
     </div>
@@ -58,13 +58,13 @@
         <div class="container clearfix">
 
             <div class="left">
-                <h2 class="subtotal">Subtotal: <span>163.96</span>$</h2>
-                <h3 class="tax">Taxes (5%): <span>8.2</span>$</h3>
-                <h3 class="shipping">Shipping: <span>5.00</span>$</h3>
+                <h2 class="subtotal">Subtotal: $<span>{{$carts->sum('precio')-$carts->sum('precio')*0.21}}</span></h2>
+                <h3 class="tax">IVA (21%): $<span>{{$carts->sum('precio')*0.21}}</span></h3>
+                <h3 class="shipping">Envio: $<span>5.00</span></h3>
             </div>
 
             <div class="right">
-                <h1 class="total">Total: <span>177.16</span>€</h1>
+                <h1 class="total">Total: $<span>{{$carts->sum('precio')+5}}</span></h1>
                 <form class="remove" action="/carrito/cerrarCompra/" method="post">
                   @csrf
                   <input type="hidden" name="estadoDeCompra" value="id">

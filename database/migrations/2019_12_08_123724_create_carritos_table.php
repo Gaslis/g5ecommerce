@@ -21,10 +21,10 @@ class CreateCarritosTable extends Migration
             $table->string('precio', 100);
             $table->string('nombre', 100);
             $table->string('descripcion', 1000);
-            $table->integer('cantidad');
+            $table->integer('cantidad')->default(0);
             $table->boolean('estadoDeCompra');
             $table->string('image_product', 500);
-            $table->integer('sumCant');
+            $table->integer('sumCant')->default(0);
             // $table->foreign('product_id')->references('id')->on('products');
             // $table->foreign('user_id')->references('id')->on('users');
 

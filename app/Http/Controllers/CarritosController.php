@@ -70,11 +70,13 @@ class CarritosController extends Controller
         //
     }
 
-
-    public function create()
-    {
-        //
-    }
+// La idea es pasar carritos a header para que pueda contar
+//     public function headerBadge()
+//     {
+//       $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+//       // dd($carts);
+//       return view('partials.header', compact('carts'));
+//     }
 
     public function store(Request $request)
     {

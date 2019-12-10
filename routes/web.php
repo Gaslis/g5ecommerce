@@ -39,6 +39,8 @@ Route::get('/products/listadoXcategoria/{id}','CategoryController@show');
 // Carrito
 Route::get('/carrito/index','CarritosController@index');
 
+// Route::get('/partials/header/','CarritosController@headerBadge');
+
 Route::post('/carrito/agregar/','CarritosController@add');
 
 Route::get('/carrito/eliminar/{id}','CarritosController@destroy');
