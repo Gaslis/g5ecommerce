@@ -43,6 +43,12 @@ Route::post('/carrito/agregar/','CarritosController@add');
 
 Route::get('/carrito/eliminar/{id}','CarritosController@destroy');
 
+Route::post('/carrito/cerrarCompra/','CarritosController@cerrarCompra');
+
+// Route::get('/partials/header','CarritosController@show');
+
+// Route::post('/products/formularioContacto/'); falta formulario de contacto
+
 
 Route::get('/s6VDIRI7DRiqvw7d6riq7w6dRQs', function () {
 	Artisan::call('storage:link');

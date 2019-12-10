@@ -52,7 +52,9 @@
   </div>
   @auth
     <a href="/carrito/index/">
-      <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon><span class="badge badge-light">1</span>
+      <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon><span class="badge badge-light">
+        {{-- {{$carts->sum('cantidad')}} --}}
+      </span>
         <span class="sr-only badge">unread messages</span>
       </button>
       {{-- <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon></button> --}}
@@ -70,7 +72,7 @@
       @if(Auth::id()===1)
         <a href="/administrarProducto"><ion-icon name=""></ion-icon>Administrar Productos</a>
       @else
-      <a href="contacto-consulta.php"><ion-icon name="call"></ion-icon> (011) 15 4054 6753</a>}
+      <a href="/products/formularioContacto"><ion-icon name="call"></ion-icon> (011) 15 4054 6753</a>}
       @endif
     </nav>
     <nav class="col-6 segundoNav">

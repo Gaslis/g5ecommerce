@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Carrito;
 
 class ProductsController extends Controller
 {
   public function index()
   {   $categorias = Category::all();
+
       $productos = Product::paginate(10);
       // return view('index', [
       //

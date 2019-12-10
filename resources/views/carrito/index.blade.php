@@ -10,13 +10,12 @@
   <div class="container">
 
         <section id="cart">
-          @foreach ($carts as $cart)
+          @forelse ($carts as $cart)
             <article class="product">
                 <header>
 
                     <a href="/carrito/eliminar/{{$cart->id}}" class="remove">
-                    <form class="remove" action="/carrito/eliminar" method="post">
-                      @csrf
+
                       {{-- <input type="hidden" name="id" value="{{$cart->id}}">
                       <button type="submit" class="btn btn-primary" name="button">Eliminar</button> --}}
                         <img src="/storage/productosImg/{{$cart->image_product}}" alt="">
@@ -46,8 +45,11 @@
                       {{$cart->precio}}
                     </h2>
                 </footer>
+              @empty
+                <h2>Su carrito se encuentra vacio</h2>
+
             </article>
-  @endforeach
+          @endforelse
         </section>
 
     </div>
@@ -63,7 +65,12 @@
 
             <div class="right">
                 <h1 class="total">Total: <span>177.16</span>€</h1>
-                <a class="btn2">Checkout</a>
+                <form class="remove" action="/carrito/cerrarCompra/" method="post">
+                  @csrf
+                  <input type="hidden" name="estadoDeCompra" value="id">
+                  <button type="submit" class="btn2 btn-primary" name="button">Pagar</button>
+                {{-- <a class="btn2">Checkout</a> --}}
+                </form>
             </div>
 
         </div>

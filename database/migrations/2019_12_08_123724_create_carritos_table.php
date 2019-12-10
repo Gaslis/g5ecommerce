@@ -24,6 +24,7 @@ class CreateCarritosTable extends Migration
             $table->integer('cantidad');
             $table->boolean('estadoDeCompra');
             $table->string('image_product', 500);
+            $table->integer('sumCant');
             // $table->foreign('product_id')->references('id')->on('products');
             // $table->foreign('user_id')->references('id')->on('users');
 

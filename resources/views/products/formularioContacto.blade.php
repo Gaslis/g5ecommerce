@@ -2,7 +2,7 @@
 @section('content')
   <section class="limitesFormu">
     <h1 class="h1-faq">FORMULARIO DE CONTACTO</h1>
-    <form>
+    <form class="" action="/products/formularioContacto/" method="post">
       @csrf
       <div class="form-row">
         <div class="col">

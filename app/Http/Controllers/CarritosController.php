@@ -38,10 +38,13 @@ class CarritosController extends Controller
       // return view('carrito.index')->with('carrito',$carrito);
     }
 
-    public function show($id)
+    public function show()
     {
-      $carrito = Carrito::with('products')->where('user_id',$id)->latest()->first();
-      return view('carrito.index')->with('carrito',$carrito);
+      // $carrito = Carrito::with('products')->where('user_id',$id)->latest()->first();
+      // return view('carrito.index')->with('carrito',$carrito);
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+      // dd($carts);
+      return view('partials.header', compact('carts'));
     }
 
     public function destroy(Request $req)
@@ -77,5 +80,13 @@ class CarritosController extends Controller
     {
         //
     }
-
+    public function cerrarCompra(Request $request)
+    {
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+      foreach ($carts as $cart) {
+        $cart->estadoDeCompra = 1;
+        $cart->update();
+      }
+      return redirect('/home');
+    }
 }
