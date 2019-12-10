@@ -19,6 +19,8 @@ class CreateCarritosTable extends Migration
             $table->unsignedBiginteger('user_id')->unsigned();
             $table->unsignedBiginteger('product_id')->unsigned();
             $table->string('precio', 100);
+            $table->string('nombre', 100);
+            $table->string('descripcion', 1000);
             $table->integer('cantidad');
             $table->boolean('estadoDeCompra');
             $table->string('image_product', 500);

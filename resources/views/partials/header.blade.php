@@ -51,7 +51,7 @@
     @endforeach --}}
   </div>
   @auth
-    <a href="/carrito/index/{{Auth::id()}}">
+    <a href="/carrito/index/">
       <button type="submit" class="btn botonChango"><ion-icon name="cart"></ion-icon><span class="badge badge-light">1</span>
         <span class="sr-only badge">unread messages</span>
       </button>

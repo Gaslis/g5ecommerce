@@ -39,7 +39,10 @@
             {{-- <p class="card-text"><p>{{ $producto->descripcion }}</p></p> --}}
             <p class="card-text"><p>${{ $producto->precio }}</p></p>
 
-            <a href="/carrito/agregar/{{ $producto->id }}/{{ Auth::id() }}" class="btn btn-primary mb-2">Agregar al carrito</a><br>
+            <form class="" action="/carrito/agregar" method="post">
+              @csrf
+              <input type="hidden" name="id" value="{{$producto->id}}">
+              <button type="submit" class="btn btn-primary" name="button">Agregar al Carrito</button><br>
             <a href="/products/detalleProducto/{{ $producto->id }}" class="btn3">Ver más</a>
           </div>
         </div>

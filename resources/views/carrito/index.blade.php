@@ -1,35 +1,6 @@
 @extends('layouts.plantilla')
 @section('content')
 
-  {{-- <div class="spacer px-5">
-    <table class="table">
-      <thead>
-      <tr>
-          <th>Id</th>
-          <th>product_id</th>
-          <th>precio_unitario</th>
-          <th>cantidad</th>
-          <th>Eliminar</th>
-      </tr>
-      </thead>
-      <tbody>
-
-          @foreach ($carrito->products as $cart)
-              <tr>
-              <td>{{$cart->id}}</td>
-              <td>{{$cart->nombre}}</td>
-              <td>{{$cart->pivot->precio_unitario}}</td>
-              <td>{{$cart->pivot->cantidad}}</td>
-              <td><a href="/carrito/eliminar/{{$cart->id}}"><ion-icon name="trash"></ion-icon></td></a>
-              </tr>
-
-          @endforeach
-      <tr>
-
-      </tr>
-      </tbody>
-    </table>
-  </div> --}}
   <header id="site-header">
 		<div class="container">
 			<h1>Carrito de compras</h1>
@@ -43,7 +14,11 @@
             <article class="product">
                 <header>
 
-                    {{-- <a href="/carrito/eliminar/{{$cart->id}}" class="remove"> --}}
+                    <a href="/carrito/eliminar/{{$cart->id}}" class="remove">
+                    <form class="remove" action="/carrito/eliminar" method="post">
+                      @csrf
+                      {{-- <input type="hidden" name="id" value="{{$cart->id}}">
+                      <button type="submit" class="btn btn-primary" name="button">Eliminar</button> --}}
                         <img src="/storage/productosImg/{{$cart->image_product}}" alt="">
                         <h3>Eliminar</h3>
                     </a>
@@ -53,7 +28,7 @@
 
                     <h1>{{$cart->nombre}}</h1>
 
-                    {{-- <p>{{$cart->products->descripcion}}</p> --}}
+                    <p>{{$cart->descripcion}}</p>
 
                     {{-- <div title="You have selected this product to be shipped in the color yellow." style="top: 0" class="color yellow"></div>
                     <div style="top: 43px" class="type small">XXL</div> --}}
@@ -68,7 +43,7 @@
                     </h2>
 
                     <h2 class="price">
-                        
+                      {{$cart->precio}}
                     </h2>
                 </footer>
             </article>
