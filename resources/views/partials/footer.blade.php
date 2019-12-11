@@ -14,8 +14,8 @@
     </article>
     <article class="col-12 col-sm-4 col-md-4">
       <h4>Seguinos en:</h4>
-      <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
-      <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+      <a href="https://www.instagram.com/graficarmerchandising"><ion-icon name="logo-facebook"></ion-icon></a>
+      <a href="https://business.facebook.com/graficarmerchandising"><ion-icon name="logo-instagram"></ion-icon></a>
       <!-- <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
       <a href="#"><ion-icon name="mail"></ion-icon></a> -->
     </article>
