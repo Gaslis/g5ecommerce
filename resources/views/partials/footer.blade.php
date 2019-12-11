@@ -2,7 +2,7 @@
   <section class="row fin  pt-5">
     <article class="col-12 col-sm-4 col-md-4 mb-5">
       <h4>Ayuda</h4>
-      <a href="faq.php">Preguntas Frecuentes</a><br>
+      <a href="">Preguntas Frecuentes</a><br>
       <a href="/products/formularioContacto/">Como hacer tu pedido</a><br>
       <a href="/products/formularioContacto/">Quienes Somos</a><br>
     </article>
