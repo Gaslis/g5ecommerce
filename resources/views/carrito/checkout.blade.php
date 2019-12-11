@@ -3,7 +3,7 @@
   <div class="row rowClase py-5">
     <div class="col-75">
       <div class="container">
-        <form action="/action_page.php">
+        <form action="/home">
 
           <div class="row rowClase">
             <div class="col-50">
@@ -30,7 +30,7 @@
             </div>
 
             <div class="col-50">
-              <h3>Payment</h3>
+              <h3>Metodo de pago</h3>
               <label for="fname">Tarjetas aceptadas</label>
               <div class="icon-container">
                 <i class="fab fa-cc-visa" style="color:navy;"></i>
