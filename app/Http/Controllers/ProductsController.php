@@ -23,7 +23,7 @@ class ProductsController extends Controller
       $categorias = Category::all();
       $productos = Product::paginate(8);;
       if(Auth::user()) {
-      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
     } else {
       $carts = null;
     }
@@ -39,7 +39,7 @@ class ProductsController extends Controller
   public function create()
   {
     if(Auth::user()) {
-    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
   } else {
     $carts = null;
   }
@@ -79,7 +79,7 @@ class ProductsController extends Controller
     $producto = Product::find($id);
     $categorias = Category::all();
     if(Auth::user()) {
-    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
   } else {
     $carts = null;
   }
@@ -93,7 +93,7 @@ class ProductsController extends Controller
     $categorias = Category::all();
     $categoriaEditada = Category::find($productoEditar->categoria_id);
     if(Auth::user()) {
-    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
   } else {
     $carts = null;
   }
@@ -128,7 +128,7 @@ class ProductsController extends Controller
   public function search(Request $request){
     $buscar = $request->busqueda;
     if(Auth::user()) {
-    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
   } else {
     $carts = null;
   }

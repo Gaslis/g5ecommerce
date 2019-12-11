@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
       // $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id); estaba asi, pero ale saco all, anda parece
       if(Auth::user()) {
-      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
     } else {
       $carts = null;
     }

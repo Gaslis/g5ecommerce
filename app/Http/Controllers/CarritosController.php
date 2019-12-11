@@ -13,7 +13,6 @@ class CarritosController extends Controller
     public function index()
     {
       $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
-      // dd($carts);
       return view('carrito.index', compact('carts'));
     }
 
@@ -38,16 +37,6 @@ class CarritosController extends Controller
       // return view('carrito.index')->with('carrito',$carrito);
     }
 
-    public function show()
-    {
-      if(Auth::user()) {
-      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
-    } else {
-      $carts = null;
-    }
-    return view('carrito.checkout', compact('carts'));
-    }
-
     public function destroy(Request $req)
     {
       $product = Carrito::find($req->id);
@@ -63,7 +52,7 @@ class CarritosController extends Controller
     public function Contacto()
     {
       if(Auth::user()) {
-      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
     } else {
       $carts = null;
     }
@@ -73,7 +62,7 @@ class CarritosController extends Controller
     public function cerrarCompra(Request $request)
     {
       if(Auth::user()) {
-      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
     } else {
       $carts = null;
     }
@@ -81,7 +70,18 @@ class CarritosController extends Controller
         $cart->estadoDeCompra = 1;
         $cart->update();
       }
+
       return redirect('/carrito/checkout');
+    }
+
+    public function show()
+    {
+      if(Auth::user()) {
+      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    } else {
+      $carts = null;
+    }
+    return view('carrito.checkout', compact('carts'));
     }
 
     public function edit($id)
@@ -93,14 +93,5 @@ class CarritosController extends Controller
     {
         //
     }
-
-// La idea es pasar carritos a header para que pueda contar
-//     public function headerBadge()
-//     {
-//       $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
-//       // dd($carts);
-//       return view('partials.header', compact('carts'));
-//     }
-
 
 }
