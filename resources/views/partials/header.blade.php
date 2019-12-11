@@ -16,10 +16,6 @@
       </div>
     </form>
   </div>
-  {{-- <div class="col-4 col-sm-3 col-md-1">
-    <button type="submit" class="btn btn-primary botonMenu menuMedia">☰</button>
-
-  </div> --}}
   <div class="dropdown col-6 col-sm-3 col-md-2">
   <button type="button" class="btn btn-primary dropdown-toggle botonMenu menuMedia" data-toggle="dropdown">
     ☰
@@ -46,9 +42,9 @@
 
       <a href="{{ route('register') }}">Registrate  <ion-icon name="create"></ion-icon></a>
     @endauth
-    @foreach ($categorias as  $categoria)
+    {{-- @foreach ($categorias as  $categoria)
     <a class="dropdown-item" href="/products/listadoXcategoria/{{ $categoria->id }}">{{ $categoria->name }}</a>
-    @endforeach
+    @endforeach --}}
   </div>
   @auth
     <a href="/carrito/index/">

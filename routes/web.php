@@ -37,9 +37,7 @@ Route::get('/products/listadoXcategoria/{id}','CategoryController@show');
 
 
 // Carrito
-Route::get('/carrito/index','CarritosController@index');
-
-// Route::get('/partials/header/','CarritosController@headerBadge');
+Route::get('/carrito/index','CarritosController@index');;
 
 Route::post('/carrito/agregar/','CarritosController@add');
 
@@ -47,7 +45,7 @@ Route::get('/carrito/eliminar/{id}','CarritosController@destroy');
 
 Route::post('/carrito/cerrarCompra/','CarritosController@cerrarCompra');
 
-// Route::get('/partials/header','CarritosController@show');
+Route::get('/carrito/checkout/','CarritosController@show');
 
 // Route::post('/products/formularioContacto/'); falta formulario de contacto
 

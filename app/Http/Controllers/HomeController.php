@@ -19,9 +19,15 @@ class HomeController extends Controller
 
     public function index()
     {
+      // $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id); estaba asi, pero ale saco all, anda parece
+      if(Auth::user()) {
+      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    } else {
+      $carts = null;
+    }
       $categorias = Category::all();
       $productos = Product::paginate(8);;
-      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+
 
       return view('index', [
           'productos' => $productos,

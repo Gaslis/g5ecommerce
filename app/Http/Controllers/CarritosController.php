@@ -42,9 +42,9 @@ class CarritosController extends Controller
     {
       // $carrito = Carrito::with('products')->where('user_id',$id)->latest()->first();
       // return view('carrito.index')->with('carrito',$carrito);
-      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+     $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
       // dd($carts);
-      return view('partials.header', compact('carts'));
+      return view('carrito.checkout', compact('carts'));
     }
 
     public function destroy(Request $req)
@@ -89,6 +89,6 @@ class CarritosController extends Controller
         $cart->estadoDeCompra = 1;
         $cart->update();
       }
-      return redirect('/home');
+      return redirect('/carrito/checkout');
     }
 }

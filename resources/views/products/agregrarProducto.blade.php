@@ -1,9 +1,9 @@
 @extends('layouts.plantilla')
 @section('content')
-<h2 class="text-center">Agregrar producto</h2>
+<h2 class="text-center mt-4">Agregrar producto</h2>
 <div class="container-fluid">
   <div class="row mt-5">
-     <div class="col-lg-8 offset-lg-2">
+     <div class="col-lg-8 offset-lg-2 mb-3">
          {{-- Si hay errores los muestro aquí--}}
         @if (count($errors->all())>0)
             <ul class="alert alert-danger">

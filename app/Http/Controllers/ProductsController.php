@@ -10,7 +10,7 @@ use Auth;
 class ProductsController extends Controller
 {
   public function index()
-  { 
+  {
   //   $categorias = Category::all();
   //
   //     $productos = Product::paginate(10);
@@ -34,8 +34,9 @@ class ProductsController extends Controller
 
   public function create()
   {
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
     $categorias = Category::all();
-    return view('products.agregrarProducto')->with('categorias',$categorias);
+    return view('products.agregrarProducto')->with('categorias',$categorias)->with('carts',$carts);
 
   }
 
@@ -69,8 +70,9 @@ class ProductsController extends Controller
   {
     $producto = Product::find($id);
     $categorias = Category::all();
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
     // return view('products.detalleProducto')->with('producto',$producto);
-    return view('products.detalleProducto', compact('producto','categorias'));
+    return view('products.detalleProducto', compact('producto','categorias','carts'));
   }
 
   public function edit($id)
@@ -78,7 +80,8 @@ class ProductsController extends Controller
     $productoEditar = Product::find($id);
     $categorias = Category::all();
     $categoriaEditada = Category::find($productoEditar->categoria_id);
-    return view('products.editarProducto', compact('productoEditar', 'categorias','categoriaEditada'));
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    return view('products.editarProducto', compact('productoEditar', 'categorias','categoriaEditada','carts'));
   }
 
   public function update(Request $request, $id)
@@ -108,8 +111,9 @@ class ProductsController extends Controller
   }
   public function search(Request $request){
     $buscar = $request->busqueda;
+    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
     $productos =Product::where('nombre','like','%'.$buscar.'%')->paginate(10);
-    return view('products.listadoDeProductos')->with('productos',$productos);
+    return view('products.listadoDeProductos')->with('productos',$productos)->with('carts',$carts);
   }
 
   // public function prodXcat(Request $request){
