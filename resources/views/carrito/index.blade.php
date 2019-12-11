@@ -35,7 +35,7 @@
 
                 <footer class="content">
                     {{-- <span class="qt-minus">-</span> --}}
-                    <span class="qt">{{$cart->cantidad}}</span>
+                    {{-- <span class="qt">{{$cart->cantidad}}</span> --}}
                     {{-- <span class="qt-plus">+</span> --}}
                     <h2 class="full-price">
 

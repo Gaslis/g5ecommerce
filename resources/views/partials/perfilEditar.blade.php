@@ -37,7 +37,7 @@
             <p>{{ $user->email }}</p> --}}
             {{-- <h3>¿Quiere subir una foto?</h3> --}}
 
-            <a href="/partials/perfil/{{ Auth::id() }}">Volver</a>
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
             </div>
           </div>
         </div>
@@ -46,11 +46,13 @@
           <div class="">
             <input type="file" name="image" value="">
           </div>
+          <div class="mt-2 float-right">
+            <a href="/partials/perfil/{{ Auth::id() }}">Volver </a>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
       </form>
-
     </div>
+
   </section>
 
 @endsection
