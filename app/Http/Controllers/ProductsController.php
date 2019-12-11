@@ -22,7 +22,11 @@ class ProductsController extends Controller
   // return view('products.listadoDeProductosAdmin')->with('productos',$productos);
       $categorias = Category::all();
       $productos = Product::paginate(8);;
-      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+      if(Auth::user()) {
+      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    } else {
+      $carts = null;
+    }
 
   return view('products.listadoDeProductosAdmin', [
       'productos' => $productos,
@@ -34,7 +38,11 @@ class ProductsController extends Controller
 
   public function create()
   {
-    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    if(Auth::user()) {
+    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+  } else {
+    $carts = null;
+  }
     $categorias = Category::all();
     return view('products.agregrarProducto')->with('categorias',$categorias)->with('carts',$carts);
 
@@ -70,7 +78,11 @@ class ProductsController extends Controller
   {
     $producto = Product::find($id);
     $categorias = Category::all();
-    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    if(Auth::user()) {
+    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+  } else {
+    $carts = null;
+  }
     // return view('products.detalleProducto')->with('producto',$producto);
     return view('products.detalleProducto', compact('producto','categorias','carts'));
   }
@@ -80,7 +92,11 @@ class ProductsController extends Controller
     $productoEditar = Product::find($id);
     $categorias = Category::all();
     $categoriaEditada = Category::find($productoEditar->categoria_id);
-    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    if(Auth::user()) {
+    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+  } else {
+    $carts = null;
+  }
     return view('products.editarProducto', compact('productoEditar', 'categorias','categoriaEditada','carts'));
   }
 
@@ -111,7 +127,11 @@ class ProductsController extends Controller
   }
   public function search(Request $request){
     $buscar = $request->busqueda;
-    $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    if(Auth::user()) {
+    $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+  } else {
+    $carts = null;
+  }
     $productos =Product::where('nombre','like','%'.$buscar.'%')->paginate(10);
     return view('products.listadoDeProductos')->with('productos',$productos)->with('carts',$carts);
   }

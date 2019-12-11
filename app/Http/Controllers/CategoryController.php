@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\Carrito;
+use Auth;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -31,8 +33,13 @@ class CategoryController extends Controller
 
     public function show($id)
     {
+      if(Auth::user()) {
+      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    } else {
+      $carts = null;
+    }
       $cat = Category::find($id);
-      return view('products.listadoXcategoria', compact('cat'));
+      return view('products.listadoXcategoria', compact('cat','carts'));
     }
 
     public function edit(Category $category)

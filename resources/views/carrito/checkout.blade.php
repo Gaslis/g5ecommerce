@@ -1,93 +1,85 @@
 @extends('layouts.plantilla')
 @section('content')
-  <div class="container">
-      <div class="price">
-          <h1>Awesome, that's $99.99 !</h1>
-      </div>
-      <div class="card__container">
-          <div class="card">
-              <div class="row paypal">
-                  <div class="left">
-                      <input id="pp" type="radio" name="payment" />
-                      <div class="radio"></div>
-                      <label for="pp">Paypal</label>
-                  </div>
-                  <div class="right">
-                      <img src="http://i68.tinypic.com/2rwoj6s.png" alt="paypal" />
-                  </div>
+  <div class="row rowClase py-5">
+    <div class="col-75">
+      <div class="container">
+        <form action="/action_page.php">
+
+          <div class="row rowClase">
+            <div class="col-50">
+              <h3>Direcion de facturacion</h3>
+              <label for="fname"><i class="fa fa-user"></i> Nombre completo</label>
+              <input type="text" id="fname" name="firstname" class="typeText" placeholder="Norberto Garcia">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" class="typeText" placeholder="norbert@example.com">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Direccion</label>
+              <input type="text" id="adr" name="address" placeholder="Monroe 5215" class="typeText">
+              <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
+              <input type="text" id="city" name="city" class="typeText" placeholder="CABA">
+
+              <div class="row rowClase">
+                <div class="col-50">
+                  <label for="state">Provincia</label>
+                  <input type="text" id="state" class="typeText" name="state" placeholder="Bs As">
+                </div>
+                <div class="col-50">
+                  <label for="zip">Codigo Postal</label>
+                  <input type="text" id="zip" class="typeText" name="zip" placeholder="1645">
+                </div>
               </div>
-              <div class="row credit">
-                  <div class="left">
-                      <input id="cd" type="radio" name="payment" />
-                      <div class="radio"></div>
-                      <label for="cd">Debit/ Credit Card</label>
-                  </div>
-                  <div class="right">
-                      <img src="http://i66.tinypic.com/5knfq8.png" alt="visa" />
-                      <img src="http://i67.tinypic.com/14y4p1.png" alt="mastercard" />
-                      <img src="http://i63.tinypic.com/1572ot1.png" alt="amex" />
-                      <img src="http://i64.tinypic.com/2i92k4p.png" alt="maestro" />
-                  </div>
+            </div>
+
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Tarjetas aceptadas</label>
+              <div class="icon-container">
+                <i class="fab fa-cc-visa" style="color:navy;"></i>
+                <i class="fab fa-cc-amex" style="color:blue;"></i>
+                <i class="fab fa-cc-mastercard" style="color:orange;"></i>
               </div>
-              <div class="row cardholder">
-                  <div class="info">
-                      <label for="cardholdername">Name</label>
-                      <input placeholder="e.g. Richard Bovell" id="cardholdername" type="text" />
-                  </div>
+              <label for="cname">Tarjeta</label>
+              <input type="text" id="cname" name="cardname" placeholder="Norberto Garcia" class="typeText">
+              <label for="ccnum">Numero de tarjeta</label>
+              <input type="text" id="ccnum" class="typeText" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Mes Exp</label>
+              <input type="text" id="expmonth" class="typeText" name="expmonth" placeholder="Septiembre">
+
+              <div class="row rowClase">
+                <div class="col-50">
+                  <label for="expyear">Año Exp</label>
+                  <input type="text" id="expyear" class="typeText" name="expyear" placeholder="2019">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" class="typeText" name="cvv" placeholder="352">
+                </div>
               </div>
-              <div class="row number">
-                  <div class="info">
-                      <label for="cardnumber">Card number</label>
-                      <input id="cardnumber" type="text" pattern="[0-9]{16,19}" maxlength="19" placeholder="8888-8888-8888-8888"/>
-                  </div>
-              </div>
-              <div class="row details">
-                  <div class="left">
-                      <label for="expiry-date">Expiry</label>
-                      <select id="expiry-date">
-                          <option>MM</option>
-                          <option value="1">01</option>
-                          <option value="2">02</option>
-                          <option value="3">03</option>
-                          <option value="4">04</option>
-                          <option value="5">05</option>
-                          <option value="6">06</option>
-                          <option value="7">07</option>
-                          <option value="8">08</option>
-                          <option value="9">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
-                      </select>
-                      <span>/</span>
-                       <select id="expiry-date">
-                          <option>YYYY</option>
-                          <option value="2016">2016</option>
-                          <option value="2017">2017</option>
-                          <option value="2018">2018</option>
-                          <option value="2019">2019</option>
-                          <option value="2020">2020</option>
-                          <option value="2021">2021</option>
-                          <option value="2022">2022</option>
-                          <option value="2023">2023</option>
-                          <option value="2024">2024</option>
-                          <option value="2025">2025</option>
-                          <option value="2026">2026</option>
-                          <option value="2027">2027</option>
-                          <option value="2028">2028</option>
-                          <option value="2029">2029</option>
-                          <option value="2030">2030</option>
-                      </select>
-                  </div>
-                  <div class="right">
-                      <label for="cvv">CVC/CVV</label>
-                      <input type="text" maxlength="4" placeholder="123"/>
-                      <span data-balloon-length="medium" data-balloon="The 3 or 4-digit number on the back of your card." data-balloon-pos="up">i</span>
-                  </div>
-              </div>
+            </div>
+
           </div>
+          <label>
+            <input type="checkbox" checked="checked" name="sameadr"> Direccion de envio igual que facturacion
+          </label>
+          <input type="submit" value="Confirmar la compra" class="btnN">
+        </form>
       </div>
-      <div class="button">
-          <button type="submit"><i class="ion-locked"></i> Confirm and Pay</button>
+    </div>
+
+    {{-- <div class="col-25">
+      <div class="container">
+        <h4>Cart
+          <span class="price" style="color:black">
+            <i class="fa fa-shopping-cart"></i>
+            <b>4</b>
+          </span>
+        </h4>
+        <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+        <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+        <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+        <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
       </div>
+    </div> --}}
   </div>
 @endsection

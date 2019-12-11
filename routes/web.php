@@ -47,7 +47,7 @@ Route::post('/carrito/cerrarCompra/','CarritosController@cerrarCompra');
 
 Route::get('/carrito/checkout/','CarritosController@show');
 
-// Route::post('/products/formularioContacto/'); falta formulario de contacto
+Route::get('/products/formularioContacto/','CarritosController@Contacto');
 
 
 Route::get('/s6VDIRI7DRiqvw7d6riq7w6dRQs', function () {

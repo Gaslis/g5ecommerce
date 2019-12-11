@@ -40,11 +40,12 @@ class CarritosController extends Controller
 
     public function show()
     {
-      // $carrito = Carrito::with('products')->where('user_id',$id)->latest()->first();
-      // return view('carrito.index')->with('carrito',$carrito);
-     $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
-      // dd($carts);
-      return view('carrito.checkout', compact('carts'));
+      if(Auth::user()) {
+      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    } else {
+      $carts = null;
+    }
+    return view('carrito.checkout', compact('carts'));
     }
 
     public function destroy(Request $req)
@@ -59,6 +60,29 @@ class CarritosController extends Controller
     //   $prodDelcarrito->delete();
     //   return redirect('/home');
     // }
+    public function Contacto()
+    {
+      if(Auth::user()) {
+      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    } else {
+      $carts = null;
+    }
+     return view('products.formularioContacto', compact('carts'));
+    }
+
+    public function cerrarCompra(Request $request)
+    {
+      if(Auth::user()) {
+      $carts = Carrito::where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
+    } else {
+      $carts = null;
+    }
+      foreach ($carts as $cart) {
+        $cart->estadoDeCompra = 1;
+        $cart->update();
+      }
+      return redirect('/carrito/checkout');
+    }
 
     public function edit($id)
     {
@@ -78,17 +102,5 @@ class CarritosController extends Controller
 //       return view('partials.header', compact('carts'));
 //     }
 
-    public function store(Request $request)
-    {
-        //
-    }
-    public function cerrarCompra(Request $request)
-    {
-      $carts = Carrito::all()->where('estadoDeCompra', 0)->where('user_id', Auth::user()->id);
-      foreach ($carts as $cart) {
-        $cart->estadoDeCompra = 1;
-        $cart->update();
-      }
-      return redirect('/carrito/checkout');
-    }
+
 }
