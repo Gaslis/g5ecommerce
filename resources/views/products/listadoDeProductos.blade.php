@@ -45,9 +45,7 @@
 
             </article>
           @endforeach
-          <div>
-              {{$productos->links()}}
-          </div>
+          
         </section>
 
     </div>
