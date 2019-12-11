@@ -18,6 +18,7 @@ class CarritosController extends Controller
 
     public function add(Request $req)
     {
+      if(Auth::user()) {
       $product = Product::find($req->id);
 
       $cart = new Carrito;
@@ -31,7 +32,10 @@ class CarritosController extends Controller
       $cart->descripcion = $product->descripcion;
       $cart->estadoDeCompra = 0;
 
-      $cart->save();
+      $cart->save();}
+      else {
+        $carts = null;
+      }
 
       return redirect('/home');
       // return view('carrito.index')->with('carrito',$carrito);
