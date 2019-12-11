@@ -32,11 +32,8 @@
         </tbody>
     </table>
     <div>
-        {{-- {{$productos->links()}} --}}
-        <a href="/products/agregrarProducto/" class="btn btn-primary">Agregar producto</a>
-    </div>
-    <div>
         {{$productos->links()}}
+        <a href="/products/agregrarProducto/" class="btn btn-primary">Agregar producto</a>
     </div>
     </div>
 
