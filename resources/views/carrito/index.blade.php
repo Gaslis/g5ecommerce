@@ -65,7 +65,7 @@
 
             <div class="right">
                 <h1 class="total">Total: $<span>{{$carts->sum('precio')}}</span></h1>
-                <form class="remove" action="/carrito/cerrarCompra/" method="POST">
+                <form class="remove" action="/carrito/cerrarCompra" method="POST">
                   @csrf
                   <input type="hidden" name="estadoDeCompra" value="id">
                   <button type="submit" class="btn2 btn-primary" name="button">Pagar</button>
