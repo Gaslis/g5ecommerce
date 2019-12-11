@@ -43,7 +43,7 @@ Route::post('/carrito/agregar/','CarritosController@add');
 
 Route::get('/carrito/eliminar/{id}','CarritosController@destroy');
 
-Route::post('/carrito/cerrarCompra/','CarritosController@cerrarCompra');
+Route::get('/carrito/cerrarCompra/','CarritosController@cerrarCompra');
 
 Route::get('/carrito/checkout/','CarritosController@show');
 
