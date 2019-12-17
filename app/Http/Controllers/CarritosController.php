@@ -47,7 +47,12 @@ class CarritosController extends Controller
       $product->delete();
       return redirect('/carrito/index/');
     }
-    
+    // public function destroy($id)
+    // {
+    //   $prodDelcarrito =  Carrito::find($id);
+    //   $prodDelcarrito->delete();
+    //   return redirect('/home');
+    // }
     public function Contacto()
     {
       if(Auth::user()) {
