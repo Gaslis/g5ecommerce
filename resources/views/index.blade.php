@@ -39,6 +39,7 @@
             <h5 class="card-title"><p>{{ $producto->nombre }}</p></h5>
             {{-- <p class="card-text"><p>{{ $producto->descripcion }}</p></p> --}}
             <p class="card-text"><p>${{ $producto->precio }}</p></p>
+            
 
             <form class="" action="/carrito/agregar" method="post">
               @csrf

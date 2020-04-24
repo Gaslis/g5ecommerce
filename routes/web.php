@@ -4,7 +4,7 @@ Route::get('/','HomeController@index')->name('home');
 
 Route::get('/administrarProducto','ProductsController@index');
 
-Route::get('/products/agregrarProducto','ProductsController@create');
+Route::get('/products/agregrarProducto','ProductsController@create')->middleware('auth');
 
 Route::post('/products/guardarProducto','ProductsController@save');
 

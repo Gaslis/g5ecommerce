@@ -30,11 +30,22 @@
 
         </tr>
         </tbody>
-    </table>
-    <div>
-        {{$productos->links()}}
-        <a href="/products/agregrarProducto/" class="btn btn-primary">Agregar producto</a>
-    </div>
-    </div>
+      </table>
+      <div>
+          {{$productos->links()}}
+          <a href="/products/agregrarProducto/" class="btn btn-primary">Agregar producto</a>
+      </div>
+      <div class="pt-4" style="width: 100%">
+        <canvas id="linechart" width="300" height="300"></canvas>
 
+      </div>
+      <div class="" style="width: 100%">
+        <canvas id="linechart2" width="300" height="300"></canvas>
+
+      </div>
+    </div>
+<script type="text/javascript">
+    var productos= @json($productos);
+    // console.log(productos);
+</script>
 @endsection

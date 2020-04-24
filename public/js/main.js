@@ -84,3 +84,120 @@ $(document).ready(function(){
     $(".remove").click();
   });
 });
+
+var CHART = document.getElementById("linechart");
+var myLineChart = new Chart(CHART, {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            fill: false,
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        },
+        {
+            label: 'My SECOND dataset',
+            backgroundColor: 'rgb(33, 99, 132)',
+            borderColor: 'rgb(33, 99, 132)',
+            data: [20, 5, 10, 30, 50, 20, 5]
+        }]
+    },
+
+});
+
+$(document).ready(function() {
+
+      var cat = [];
+      var nombre = [];
+      var num = productos.length;
+      for (var i=0;i<num;i++)
+      {
+        nombre.push(productos[i].nombre);
+        cat.push(productos[i].categoria_id);
+      }
+      console.log(productos);
+      var CHART = document.getElementById("linechart2");
+      var myLineChart = new Chart(CHART, {
+        type: 'line',
+        data: {
+          labels: nombre,
+          datasets: [{
+              label: 'My First dataset',
+              fill: false,
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: cat
+            },
+            {
+              label: 'My SECOND dataset',
+              backgroundColor: 'rgb(33, 99, 132)',
+              borderColor: 'rgb(33, 99, 132)',
+              data: [20, 5, 10, 30, 50, 20, 5]
+            }]
+          },
+        });
+});
+
+
+// function (productos)
+//   {
+//     var cat = [];
+//     var marks = [];
+//     for (var i in productos)
+//     {
+//       name.push(productos[i].student_name);
+//       marks.push(productos[i].marks);
+//     }
+// }
+
+// $(document).ready(function() {
+//     $.ajax({
+//         success: function(data) {
+//             var nombre = [];
+//             var stock = [];
+//             var color = ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'];
+//             var bordercolor = ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'];
+//             console.log(data);
+//
+//             for (var i in data) {
+//                 nombre.push(data[i].nombre);
+//                 stock.push(data[i].stock);
+//             }
+//
+//             var chartdata = {
+//                 labels: nombre,
+//                 datasets: [{
+//                     label: nombre,
+//                     backgroundColor: color,
+//                     borderColor: color,
+//                     borderWidth: 2,
+//                     hoverBackgroundColor: color,
+//                     hoverBorderColor: bordercolor,
+//                     data: stock
+//                 }]
+//             };
+//
+//             var mostrar = $("#miGrafico");
+//
+//             var grafico = new Chart(mostrar, {
+//                 type: 'doughnut',
+//                 data: chartdata,
+//                 options: {
+//                     responsive: true,
+//                     scales: {
+//                         yAxes: [{
+//                             ticks: {
+//                                 beginAtZero: true
+//                             }
+//                         }]
+//                     }
+//                 }
+//             });
+//         },
+//         error: function(data) {
+//             console.log(data);
+//         }
+//     });
+// });

@@ -26,6 +26,7 @@
                  <label for="descripcion">Descripcion</label>
                  <input type="text" class="form-control" name="descripcion" id="descripcion" value="{{ old('descripcion', $productoEditar->descripcion) }}">
              </div>
+             
              <input type="hidden" name="id" value="{{ $categoriaEditada->id }}">
              <div class="form-group">
                  <label for="categorias">Categorias de los productos</label>
