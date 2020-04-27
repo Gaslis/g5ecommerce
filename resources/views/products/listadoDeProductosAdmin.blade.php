@@ -46,6 +46,5 @@
     </div>
 <script type="text/javascript">
     var productos= @json($productos);
-    // console.log(productos);
 </script>
 @endsection

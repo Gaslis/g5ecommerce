@@ -108,7 +108,6 @@ var myLineChart = new Chart(CHART, {
 });
 
 $(document).ready(function() {
-
       var cat = [];
       var nombre = [];
       var num = productos.length;
@@ -154,7 +153,11 @@ $(document).ready(function() {
 
 // $(document).ready(function() {
 //     $.ajax({
-//         success: function(data) {
+//         url: "http://localhost:8000/administrarProducto.blade.php",
+//         dataType: 'json',
+//         contentType: "application/json; charset=utf-8",
+//         method: "GET",
+//         success: function(productos) {
 //             var nombre = [];
 //             var stock = [];
 //             var color = ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'];
@@ -162,8 +165,8 @@ $(document).ready(function() {
 //             console.log(data);
 //
 //             for (var i in data) {
-//                 nombre.push(data[i].nombre);
-//                 stock.push(data[i].stock);
+//                 nombre.push(productos[i].nombre);
+//                 stock.push(productos[i].categoria_id);
 //             }
 //
 //             var chartdata = {
